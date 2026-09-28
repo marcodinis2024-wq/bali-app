@@ -1,6 +1,7 @@
 # Bali Food & Drinks — vídeo promocional
 
-`bali-promo-16x9-60fps.mp4` — anúncio de 42 s, 1920×1080, 60 fps, H.264 + AAC (−14 LUFS).
+- `bali-promo-16x9-60fps.mp4` — anúncio de 42 s, 1920×1080, 60 fps, H.264 + AAC (−14 LUFS).
+- `bali-promo-9x16-60fps.mp4` — a mesma peça na vertical, 1080×1920, para Reels, TikTok e Stories (texto dentro das zonas seguras).
 
 Mostra a ementa digital real ([bali-food-drinks](https://github.com/marcodinis2024-wq/bali-food-drinks)).
 Todas as imagens dentro do telemóvel são capturas da própria app.
@@ -28,13 +29,14 @@ As pausas antes da cena WhatsApp e do final servem para dar respiração.
 
 ```bash
 cd promo
-./render.sh                  # usa as capturas em shots/
+./render.sh                  # 16:9, usa as capturas em shots/
+FORMAT=916 ./render.sh       # 9:16 (gera ad_916.html com make_916.py)
 RECAPTURE=1 APP_HTML=/caminho/para/bali-food-drinks/index.html ./render.sh   # volta a fotografar a app
 ```
 
 Para ver a animação em tempo real no browser, abra `ad.html#play`.
 
-- `ad.html` — a composição inteira; `render(t)` desenha o frame no instante `t` (determinístico).
+- `ad.html` — a composição inteira (16:9); `make_916.py` gera `ad_916.html` com o layout vertical; `render(t)` desenha o frame no instante `t` (determinístico).
 - `audio.py` — música e efeitos, com os tempos sincronizados com `ad.html`.
 - `capture.js` / `prep_shots.py` — capturas da app (390×844 @2x).
 - `render_frames.js` — exporta os frames com o Playwright; o `ffmpeg` junta imagem e som.
