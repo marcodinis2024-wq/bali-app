@@ -6,6 +6,8 @@ process.chdir(__dirname);
   const p = await br.newPage({ viewport:{width:1920,height:1080}, ignoreHTTPSErrors:true });
   p.on('pageerror', e=>console.log('ERR',e.message));
   await p.goto('file://'+process.cwd()+'/ad.html'); await p.evaluate(()=>window.ready); await p.waitForTimeout(500);
+  const ok = await p.evaluate(()=>['800 100px Fraunces','400 40px Yellowtail','600 20px Outfit'].every(f=>document.fonts.check(f)));
+  if(!ok){ console.error('FONTS NOT LOADED'); process.exit(1); }
   for (let f=a; f<b; f++) {
     await p.evaluate(t=>render(t), f/60);
     await p.screenshot({path:`frames/${String(f).padStart(5,'0')}.jpg`, type:'jpeg', quality:95});

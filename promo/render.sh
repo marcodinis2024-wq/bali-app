@@ -20,6 +20,6 @@ done
 wait
 
 ffmpeg -y -framerate $FPS -i frames/%05d.jpg -i audio.wav \
-  -c:v libx264 -preset slow -crf 16 -pix_fmt yuv420p -profile:v high -level 4.2 -r $FPS \
+  -c:v libx264 -preset slow -crf 19 -tune animation -pix_fmt yuv420p -profile:v high -level 4.2 -r $FPS \
   -c:a aac -b:a 320k -af loudnorm=I=-14:TP=-1:LRA=11 -movflags +faststart -shortest \
   bali-promo-16x9-60fps.mp4

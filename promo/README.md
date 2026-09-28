@@ -38,3 +38,4 @@ Para ver a animação em tempo real no browser, abra `ad.html#play`.
 - `audio.py` — música e efeitos, com os tempos sincronizados com `ad.html`.
 - `capture.js` / `prep_shots.py` — capturas da app (390×844 @2x).
 - `render_frames.js` — exporta os frames com o Playwright; o `ffmpeg` junta imagem e som.
+- `fonts/` — Fraunces, Outfit e Yellowtail (Google Fonts, licença OFL) incluídas localmente, para o render não depender da rede.

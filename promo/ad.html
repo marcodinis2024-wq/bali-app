@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt"><head><meta charset="utf-8">
 <title>Bali Promo</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Outfit:wght@300;400;500;600;700;800&family=Yellowtail&display=swap" rel="stylesheet">
+<link href="fonts/fonts.css" rel="stylesheet">
 <style>
 :root{--t950:#082B2B;--t900:#0E3E3D;--t800:#14524F;--t700:#1C6664;--t600:#2A8380;--t500:#379A97;--t200:#A9D3CB;--t100:#D9EAE4;
 --paper:#EEF3EC;--paper2:#F8FBF6;--leaf:#6FA463;--leaf2:#8FBE81;--mango:#EFA23F;--mangoInk:#8A5314;--ink:#0F2E2B;--wa:#1FA855}
@@ -413,7 +413,7 @@ const PM=makePhone(MAIN_L.filter(k=>k!=='sheet_acai_b'),'tab_home');
 /* sheet bottom layer for slide-up */
 const sb=document.createElement('img');sb.className='l';sb.src='shots/sheet_acai.png';sb.style.clipPath='inset(488px 0 0 0)';PM.el.querySelector('.scr').insertBefore(sb,PM.tab);PM.L.sheet_acai_b=sb;
 const PL=makePhone(['info'],null), PR=makePhone(['home_full'],'tab_home');
-PL.L.info.style.opacity=1;PR.L.home_full.style.transform='translateY(-1000px)';
+PL.L.info.style.opacity=1;PR.L.home_full.style.transform='translateY(-960px)';
 
 function phoneT(ph,{x,y,s=1,ry=0,rz=0,rx=0,o=1,b=0}){
  ph.el.style.transform=`translate(${x-209}px,${y-436}px) rotateY(${ry}deg) rotateX(${rx}deg) rotateZ(${rz}deg) scale(${s})`;
@@ -482,7 +482,7 @@ function renderMainScreen(t){
  PM.badge.style.transform=`scale(${1+bump*.9})`;
 }
 /* taps: [t,x,y] in screen px */
-const TAPS=[[12.5,58,212],[13.35,58,212],[16.6,190,705],[17.75,273,802],[20.15,422,803],[27.15,292,582]];
+const TAPS=[[12.5,56,193],[13.35,56,193],[16.6,190,680],[17.75,102,803],[20.15,252,803],[27.15,195,580]];
 function renderTaps(t){
  let a=null;TAPS.forEach(tp=>{if(t>=tp[0]-.35&&t<tp[0]+.5)a=tp});
  const tap=PM.tap,fg=PM.el.querySelector('.finger');
@@ -529,7 +529,7 @@ window.render=function(t){
  circ(s4,t,15.7,.55,1360,545);
  slideIn(s5,t,19.7,.5,[-1,0]);
  circ(s6,t,23.6,.55,560,545);
- circ(s7,t,27.25,.55,560+ (292-195),545+(582-422));
+ circ(s7,t,27.25,.55,560,545+(580-422));
  slideIn(s8,t,31.6,.55,[0,-1]);
  circ(s9,t,35.9,.6,960,540);
 
@@ -634,7 +634,7 @@ window.render=function(t){
   const cp=E.expo(P(t,27.7,28.3));S('#s7chat',{x:1480+(1-cp)*700-ex*0,y:545+ex*900,r:(1-cp)*10,o:cp});
   // bubble flight
   const f=P(t,28.35,29.0);const e=E.io(f);
-  const bx=lerp(360+97,1560,e), by=lerp(545+160,560,e)-Math.sin(f*Math.PI)*260;
+  const bx=lerp(360,1560,e), by=lerp(545+150,560,e)-Math.sin(f*Math.PI)*260;
   S('#s7bub',{x:bx,y:by+ex*900,s:lerp(.25,1,E.out(f)),r:(1-E.out(f))*-18,o:f>0?1:0,b:Math.sin(f*Math.PI)*3});
   const blue=P(t,29.35,29.5);$('#tk').setAttribute('stroke',blue>0?'#34B7F1':'#8A9A95');
   const st=P(t,30.4,30.75);S('#s7stamp',{x:1540,y:880+ex*900,s:lerp(2.2,1,E.expo(st)),r:-7,o:cl(st*4)});
@@ -688,7 +688,7 @@ window.render=function(t){
  const fo=P(t,41.35,42);const fi=1-P(t,0,.25);
  $('#stage').style.filter=(fo>0||fi>0)?`brightness(${(1-fo)*(1-fi)})`:'none';
 };
-window.ready=Promise.all([document.fonts.ready,...[...document.images].map(i=>i.complete?1:new Promise(r=>{i.onload=i.onerror=r}))]);
+window.ready=Promise.all([...['800 100px Fraunces','700 100px Fraunces','500 100px Fraunces','600 20px Fraunces','400 40px Yellowtail','400 20px Outfit','500 20px Outfit','600 20px Outfit','700 20px Outfit','800 20px Outfit'].map(f=>document.fonts.load(f,'Açãé€')),document.fonts.ready,...[...document.images].map(i=>i.complete?1:new Promise(r=>{i.onload=i.onerror=r}))]);
 if(location.hash==='#play'){const t0=performance.now();(function loop(){render(((performance.now()-t0)/1000)%42);requestAnimationFrame(loop)})()}
 else render(0);
 </script>

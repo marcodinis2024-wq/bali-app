@@ -5,10 +5,16 @@ process.chdir(__dirname);
 (async () => {
   const b = await chromium.launch();
   const ctx = await b.newContext({ viewport:{width:390,height:844}, deviceScaleFactor:2, ignoreHTTPSErrors:true, timezoneId:'Europe/Lisbon' });
+  // Fontes locais (fonts/) em vez do Google Fonts, para capturas estáveis sem rede.
+  await ctx.route(/fonts\.(googleapis|gstatic)\.com/, r => r.abort());
   const p = await ctx.newPage();
   await p.clock.install({ time: new Date('2026-09-28T12:30:00+01:00') });
   await p.goto('file://' + APP, {waitUntil:'networkidle'});
+  const fontCss = require('fs').readFileSync(path.join(__dirname,'fonts/fonts.css'),'utf8').replace(/url\((.*?)\)/g, (m,u) => `url(file://${path.join(__dirname,'fonts',u)})`);
+  await p.addStyleTag({content: fontCss});
+  await p.evaluate(() => Promise.all(['700 20px Fraunces','400 20px Outfit','600 20px Outfit','400 20px Yellowtail'].map(f => document.fonts.load(f))));
   await p.evaluate(()=>document.fonts.ready);
+  if (!(await p.evaluate(() => document.fonts.check('700 20px Fraunces') && document.fonts.check('400 20px Outfit')))) throw new Error('fonts not loaded');
   await p.addStyleTag({content:'.canopy .lf,.dot{animation:none!important}.rv{opacity:1!important;transform:none!important}::-webkit-scrollbar{display:none}.tab__count[hidden]{display:none!important}'});
   const shot = async (n, full=false) => { await p.waitForTimeout(700);
     if(full){ const h = await p.addStyleTag({content:'.tabs,.sheet,.scrim,.toast,.dialog{display:none!important}'}); await p.screenshot({path:`shots/${n}.png`, fullPage:true}); await h.evaluate(e=>e.remove()); }
