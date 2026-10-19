@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt"><head><meta charset="utf-8">
+<title>Timberline · A porta está aberta</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<style>
+:root{--gold:#E3B65A;--gold2:#F3D58E;--cream:#F2EADB;--muted:#9A8F7E}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+body{font-family:'Inter Tight',sans-serif;color:var(--cream);-webkit-font-smoothing:antialiased}
+#stage{position:absolute;inset:0;overflow:hidden;background:#0b0a08}
+#cam{position:absolute;inset:0}
+.L{position:absolute;inset:0;opacity:0;visibility:hidden;overflow:hidden}
+.a{position:absolute;will-change:transform,opacity}
+.d{font-family:Archivo,sans-serif;font-weight:900;letter-spacing:-.035em;line-height:.95;white-space:nowrap}
+.m{font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+.w{display:inline-block;will-change:transform,opacity}
+.gold{color:var(--gold)}
+.ill{position:absolute;right:40px;bottom:30px;font:500 14px 'JetBrains Mono';letter-spacing:.2em;color:rgba(242,234,219,.45);text-transform:uppercase}
+.chip{display:inline-flex;align-items:center;gap:12px;padding:14px 24px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(242,234,219,.18);font:500 22px 'JetBrains Mono';letter-spacing:.08em;white-space:nowrap}
+.chip i{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+#grain{position:absolute;inset:-100px;opacity:.07;mix-blend-mode:overlay;pointer-events:none}
+#vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 50%,rgba(0,0,0,.6) 100%)}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+#bars{position:absolute;left:0;top:0;width:1920px;height:1080px;pointer-events:none}
+</style></head>
+<body>
+<div id="stage"><div id="cam">
+
+ <!-- 1 GANCHO: folha e lápis -->
+ <div class="L" id="hook" style="background:#efe7d6">
+  <svg class="a" id="sk" width="1920" height="1080" viewBox="0 0 1920 1080" style="left:0;top:0">
+   <g fill="none" stroke="#2a2620" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path class="sp" pathLength="1" d="M560 780 L560 470 L960 250 L1360 470 L1360 780 Z"/>
+    <path class="sp" pathLength="1" d="M520 780 L1400 780"/>
+    <path class="sp" pathLength="1" d="M660 600 L660 480 M1260 600 L1260 480"/>
+    <path class="sp" pathLength="1" d="M760 780 L760 620 L1160 620 L1160 780"/>
+    <path class="sp" pathLength="1" d="M1440 260 C1500 230 1560 270 1530 320 C1500 370 1420 350 1440 290"/>
+    <path class="sp" pathLength="1" d="M600 830 C720 812 900 846 1020 826 C1140 806 1300 840 1420 822" stroke-width="3"/>
+   </g>
+  </svg>
+  <div class="a d" id="hkT" style="left:0;top:880px;width:1920px;text-align:center;font-size:86px;color:#2a2620"></div>
+  <div class="ill">ilustração</div>
+ </div>
+
+ <!-- 2 O TERRENO: floresta ao amanhecer -->
+ <div class="L" id="land" style="background:linear-gradient(180deg,#f0c98a 0%,#c98c5a 28%,#2a3a2c 55%,#0f1a14 100%)">
+  <div class="a" id="sun" style="left:1280px;top:120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(255,236,190,.95) 0%,rgba(255,200,120,.2) 45%,transparent 70%)"></div>
+  <svg class="a" id="trees1" width="2400" height="700" viewBox="0 0 2400 700" style="left:-240px;top:330px"></svg>
+  <svg class="a" id="trees2" width="2400" height="700" viewBox="0 0 2400 700" style="left:-240px;top:420px"></svg>
+  <div class="a" style="left:0;top:700px;width:1920px;height:380px;background:linear-gradient(180deg,#1b2a1f,#0a120d)"></div>
+  <div class="a d" id="lnT1" style="left:120px;top:150px;font-size:96px"></div>
+  <div class="a d" id="lnT2" style="left:120px;top:262px;font-size:96px;color:var(--gold)"></div>
+  <div class="ill">ilustração</div>
+ </div>
+
+ <!-- 3 A FUNDAÇÃO: a casa sobe -->
+ <div class="L" id="found" style="background:radial-gradient(90% 70% at 50% 60%,#2a2216 0%,#0b0a08 70%)">
+  <svg class="a" id="iso" width="1920" height="1080" viewBox="0 0 1920 1080" style="left:0;top:0;overflow:visible">
+   <g id="gSlab"></g><g id="gWall"></g><g id="gStud"></g><g id="gRoof"></g>
+  </svg>
+  <div class="a d" id="fT" style="left:120px;top:110px;font-size:92px"></div>
+  <div class="a" id="fChips" style="left:120px;top:960px;display:flex;gap:14px"></div>
+  <div class="ill">ilustração</div>
+ </div>
+
+ <!-- 4 O QUE NÃO SE VÊ: camadas -->
+ <div class="L" id="diff" style="background:#0b0a08">
+  <div class="a" id="cut" style="left:0;top:0;width:1920px;height:1080px"></div>
+  <div class="a d" id="dT" style="left:120px;top:120px;font-size:100px"></div>
+  <div class="a" id="dStk" style="left:120px;top:430px;display:flex;flex-direction:column;gap:22px"></div>
+  <div class="ill">ilustração</div>
+ </div>
+
+ <!-- 5 A PORTA ESTÁ ABERTA: noite -->
+ <div class="L" id="door" style="background:radial-gradient(90% 80% at 62% 62%,#15263a 0%,#0c141d 55%,#050809 100%)">
+  <svg class="a" id="dtrees" width="1920" height="1080" viewBox="0 0 1920 1080" style="left:0;top:0"></svg>
+  <svg class="a" id="dhouse" width="1920" height="1080" viewBox="0 0 1920 1080" style="left:0;top:0;overflow:visible">
+   <defs><linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe2a0" stop-opacity=".9"/><stop offset="1" stop-color="#e3a64a" stop-opacity="0"/></linearGradient>
+   <radialGradient id="pool" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="rgba(255,190,100,.5)"/><stop offset="1" stop-color="rgba(255,190,100,0)"/></radialGradient></defs>
+   <ellipse cx="1180" cy="760" rx="620" ry="180" fill="url(#pool)"/>
+   <polygon points="700,560 1220,430 1220,760 700,760" fill="#c9bfae"/>
+   <polygon points="1220,430 1520,500 1520,800 1220,760" fill="#a79d8c"/>
+   <polygon points="640,560 960,380 1280,560 960,520" fill="#2b2a28"/>
+   <polygon points="640,560 1220,430 1520,500 960,520" fill="#3a3834"/>
+   <rect x="780" y="600" width="170" height="130" fill="url(#glow)" opacity=".95" id="w1"/>
+   <rect x="1000" y="600" width="170" height="130" fill="url(#glow)" opacity=".95" id="w2"/>
+   <rect x="1300" y="560" width="140" height="150" fill="url(#glow)" opacity=".9" id="w3"/>
+   <g id="door2"><rect x="1080" y="540" width="120" height="220" fill="#4a2f1c" id="dpanel"/></g>
+   <polygon points="1200,540 1290,520 1290,770 1200,760" fill="url(#glow)" id="spill" opacity="0"/>
+  </svg>
+  <div class="a d" id="dT2" style="left:120px;top:110px;font-size:110px"></div>
+  <div class="a" id="dChips" style="left:120px;top:300px;display:flex;flex-direction:column;gap:14px;align-items:flex-start"></div>
+  <div class="ill">ilustração</div>
+ </div>
+
+ <!-- 6 O PRIMEIRO JANTAR -->
+ <div class="L" id="inside" style="background:radial-gradient(70% 70% at 50% 40%,#5a3e22 0%,#2a1d12 55%,#0b0806 100%)">
+  <div class="a" style="left:0;top:0;width:1920px;height:1080px;background:radial-gradient(40% 40% at 20% 20%,rgba(255,200,120,.25),transparent 70%),radial-gradient(40% 40% at 80% 25%,rgba(255,200,120,.2),transparent 70%)"></div>
+  <div class="a" id="tbl" style="left:360px;top:620px;width:1200px;height:200px;border-radius:50%;background:linear-gradient(180deg,#5b3b22,#2e1d10);box-shadow:0 40px 80px rgba(0,0,0,.5)"></div>
+  <div class="a" id="lamp1" style="left:500px;top:120px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,220,150,.9),rgba(255,200,120,0) 70%)"></div>
+  <div class="a" id="lamp2" style="left:1200px;top:120px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,220,150,.9),rgba(255,200,120,0) 70%)"></div>
+  <div class="a d" id="iT" style="left:0;top:330px;width:1920px;text-align:center;font-size:150px"></div>
+  <div class="a" id="iS" style="left:0;top:520px;width:1920px;text-align:center;font:400 44px 'Inter Tight';color:rgba(242,234,219,.85)">Feita para se reunir.</div>
+  <div class="ill">ilustração</div>
+ </div>
+
+ <!-- 7 COMO SE COMEÇA -->
+ <div class="L" id="steps" style="background:#0b0a08">
+  <div class="a d" id="sT" style="left:120px;top:110px;font-size:90px"></div>
+  <div class="a" id="sCards" style="left:120px;top:370px;display:flex;gap:40px"></div>
+  <div class="a" id="sEnd" style="left:120px;top:820px;font:500 30px 'Inter Tight';color:rgba(242,234,219,.85)">Fale connosco. Sem compromisso.</div>
+ </div>
+
+ <!-- 8 FINAL -->
+ <div class="L" id="end" style="background:radial-gradient(60% 70% at 50% 45%,#2a2216,#0b0a08 70%)">
+  <svg class="a" id="emb" width="260" height="260" viewBox="0 0 200 200" style="left:830px;top:200px">
+   <circle class="se" cx="100" cy="100" r="92" fill="none" stroke="#E3B65A" stroke-width="3"/>
+   <path class="se" d="M44 108 L100 58 L156 108" fill="none" stroke="#E3B65A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+   <path class="se" d="M60 96 V146 H140 V96" fill="none" stroke="#E3B65A" stroke-width="4" stroke-linejoin="round"/>
+   <path class="se" d="M80 146 V112 M100 146 V100 M120 146 V112" fill="none" stroke="#E3B65A" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  <div class="a d" id="eT" style="left:0;top:500px;width:1920px;text-align:center;font-size:110px"></div>
+  <div class="a" id="eC" style="left:0;top:680px;width:1920px;text-align:center;font:500 30px 'JetBrains Mono';letter-spacing:.08em;color:var(--cream)">T 925 392 248 · T 924 316 442 · geraltimberline@gmail.com</div>
+  <div class="a m" id="eB" style="left:0;top:790px;width:1920px;text-align:center;font-size:24px;color:var(--gold)">Em breve no ar · Timberline</div>
+ </div>
+
+</div>
+ <canvas id="grain" width="640" height="1024"></canvas>
+ <div id="vig"></div>
+ <div id="flash"></div>
+</div>
+
+<script>
+const $=s=>document.querySelector(s);const $$=s=>[...document.querySelectorAll(s)];
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const P=(t,a,b)=>cl((t-a)/(b-a));const lerp=(a,b,x)=>a+(b-a)*x;
+const E={out:x=>1-Math.pow(1-x,3),in:x=>x*x*x,io:x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2,expo:x=>x>=1?1:1-Math.pow(2,-10*x),expoIn:x=>x<=0?0:Math.pow(2,10*x-10),quart:x=>1-Math.pow(1-x,4),back:x=>{const c1=1.6,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)}};
+function rng(seed){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function splitWords(el,txt){el.innerHTML='';const parts=txt.split(/(\s+)/);parts.forEach(w=>{if(!w)return;if(/^\s+$/.test(w)){el.appendChild(document.createTextNode(' '));return}const s=document.createElement('span');s.className='w';s.innerHTML=w;el.appendChild(s)});return[...el.querySelectorAll('.w')]}
+function words(ws,t,t0,st=.07,d=.6,dy=60){ws.forEach((w,i)=>{const p=P(t,t0+i*st,t0+i*st+d);const e=E.quart(p);w.style.transform=`translateY(${(1-e)*dy}px)`;w.style.opacity=cl(p*1.6);w.style.filter=p<1?`blur(${((1-e)*8).toFixed(2)}px)`:'none'})}
+function vis(id,a,b,fi=.5,fo=.45){const v=Math.min(P(_t,a,a+fi),1-P(_t,b-fo,b));const el=$('#'+id);el.style.opacity=cl(v);el.style.visibility=v>.001?'visible':'hidden';return v}
+let _t=0;
+
+/* ── static setup ── */
+const hkW=splitWords($('#hkT'),'Todas as casas começam com um desenho.');
+const lnW1=splitWords($('#lnT1'),'Um terreno entre pinheiros.');
+const lnW2=splitWords($('#lnT2'),'E o sonho de um silêncio.');
+const fW=splitWords($('#fT'),'Tudo começa no <span class="gold">chão certo.</span>');
+const dW=splitWords($('#dT'),'A diferença está no que <span class="gold">não se vê.</span>');
+const dW2=splitWords($('#dT2'),'A porta <span class="gold">está aberta.</span>');
+const iW=splitWords($('#iT'),'Entre.');
+const sW=splitWords($('#sT'),'Três passos. <span class="gold">Sem surpresas.</span>');
+const eW=splitWords($('#eT'),'Vamos construir a sua <span class="gold">casa.</span>');
+$$('.sp').forEach(p=>{const L=1;p.style.strokeDasharray=1;p.style.strokeDashoffset=1});
+
+/* trees */
+function forest(svg,seed,n,hmin,hmax,col){const r=rng(seed);let s='';for(let i=0;i<n;i++){const x=r()*2400,h=hmin+r()*(hmax-hmin),w=h*.22;s+=`<polygon points="${x-w},700 ${x},${700-h} ${x+w},700" fill="${col}"/>`;s+=`<polygon points="${x-w*.7},${700-h*.5} ${x},${700-h*1.05} ${x+w*.7},${700-h*.5}" fill="${col}"/>`}svg.innerHTML=s}
+forest($('#trees1'),5,60,260,420,'#1a2c20');forest($('#trees2'),9,50,180,300,'#0f1d14');
+function dark(svg,seed,n){const r=rng(seed);let s='';for(let i=0;i<n;i++){const x=r()*1920,h=180+r()*260,w=h*.18;s+=`<polygon points="${x-w},1080 ${x},${1080-h} ${x+w},1080" fill="#050a08"/>`}svg.innerHTML=s}
+dark($('#dtrees'),3,46);
+
+/* iso house geometry (found scene) */
+const SC=46,CO=Math.cos(Math.PI/6),OX=960,OY=470;
+const pt=(x,y,z)=>[OX+(x-y)*CO*SC,OY+(x+y)*.5*SC-z*SC];
+const pts=a=>a.map(p=>pt(...p).map(v=>v.toFixed(1)).join(',')).join(' ');
+const NS='http://www.w3.org/2000/svg';const mk=(tag,attrs,par)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);par.appendChild(e);return e};
+const gSlab=$('#gSlab'),gWall=$('#gWall'),gStud=$('#gStud'),gRoof=$('#gRoof');
+const SL=mk('polygon',{fill:'#8e877b'},gSlab),SLs=mk('polygon',{fill:'#5c564c'},gSlab),SLr=mk('polygon',{fill:'#6b655a'},gSlab);
+const WF=mk('polygon',{fill:'#b98c4e'},gWall),WR=mk('polygon',{fill:'#8e6236'},gWall),BF=mk('polygon',{fill:'#c99c5e'},gWall),BR=mk('polygon',{fill:'#a27545'},gWall);
+const RF=mk('polygon',{fill:'#2a2622'},gRoof);
+const studs=[];for(let x=0;x<=12;x+=1.5)studs.push([x,0,x,8]);for(let y=0;y<=8;y+=1.5)studs.push([12,y,12,y]);
+const STL=studs.map(()=>mk('line',{stroke:'#e7be7b','stroke-width':4,'stroke-linecap':'round'},gStud));
+const chips=['Classe IV','OSB 3/4','XPS · laje isolada','Fibra de madeira'];
+const fC=$('#fChips');chips.forEach(c=>{const d=document.createElement('div');d.className='chip';d.innerHTML=`<i></i>${c}`;d.style.opacity=0;fC.appendChild(d)});
+
+/* differentials stack */
+const cut=$('#cut');
+const LAY=[['Fibra de madeira','pelo exterior'],['Lã de rocha','incombustível'],['OSB 3/4','contraventamento'],['Lamelado colado','Classe IV']];
+const dStk=$('#dStk');LAY.forEach(([a,b])=>{const d=document.createElement('div');d.className='chip';d.style.cssText+=';padding:22px 34px;font-size:30px;width:760px;justify-content:space-between';d.innerHTML=`<span style="font:700 34px Archivo;letter-spacing:-.01em;text-transform:none">${a}</span><span style="color:var(--muted)">${b}</span>`;d.style.opacity=0;dStk.appendChild(d)});
+
+/* doorway chips */
+const dC=$('#dChips');['À medida','Chave na mão'].forEach(c=>{const d=document.createElement('div');d.className='chip';d.innerHTML=`<i></i>${c}`;d.style.opacity=0;dC.appendChild(d)});
+
+/* steps cards */
+const sC=$('#sCards');[['01','Desenho'],['02','Projeto à medida'],['03','Chave na mão']].forEach(([n,t])=>{const d=document.createElement('div');d.style.cssText='width:520px;height:380px;border-radius:26px;padding:34px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(242,234,219,.16);position:relative;opacity:0';d.innerHTML=`<div style="font:600 96px Archivo;color:rgba(227,182,90,.22);position:absolute;right:30px;top:12px">${n}</div><div style="position:absolute;left:34px;bottom:40px;font:800 56px/1 Archivo;letter-spacing:-.02em">${t}</div>`;sC.appendChild(d)});
+
+/* final emblem strokes */
+$$('.se').forEach(p=>{const L=p.getTotalLength?p.getTotalLength():600;p.style.strokeDasharray=L;p.style.strokeDashoffset=L;p.dataset.len=L});
+
+/* ── render ── */
+window.render=function(t){
+ _t=t;
+ /* 1 hook: pencil draws the house */
+ vis('hook',0,4.2,0,.5);
+ $$('.sp').forEach((p,i)=>{const t0=.25+i*.32;const e=E.io(P(t,t0,t0+.55));p.style.strokeDashoffset=1-e});
+ const hkp=P(t,2.3,2.9);words(hkW,t,2.3,.06,.55,40);
+ $('#hkT').style.opacity=hkp*fadeOut(t,3.6,4.1);
+ /* 2 land */
+ const L2=vis('land',3.8,9.4);
+ $('#trees1').style.transform=`translateX(${-(t-4)*40}px)`;$('#trees2').style.transform=`translateX(${-(t-4)*70}px)`;
+ $('#sun').style.transform=`translateY(${(t-4)*-10}px)`;
+ words(lnW1,t,4.6,.07,.6,50);words(lnW2,t,6.2,.07,.6,50);
+ $('#lnT1').style.opacity=1;
+ /* 3 foundation: house builds */
+ vis('found',8.9,17.4);
+ const b=P(t,9.6,10.4),b2=P(t,10.6,11.6),b3=P(t,11.8,12.8),b4=P(t,13.0,13.8),b5=P(t,13.9,14.8);
+ /* slab */
+ const sz=E.out(b);const sx0=-.6,sx1=12.6,sy0=-.6,sy1=8.6;
+ SL.setAttribute('points',pts([[sx0,sy0,-.4*sz],[sx1,sy0,-.4*sz],[sx1,sy1,-.4*sz],[sx0,sy1,-.4*sz]]));
+ SLs.setAttribute('points',pts([[sx0,sy1,-.4*sz],[sx1,sy1,-.4*sz],[sx1,sy1,-.4*sz*0+(-.4-.6)*sz],[sx0,sy1,(-.4-.6)*sz]]));
+ SLr.setAttribute('points',pts([[sx1,sy0,-.4*sz],[sx1,sy1,-.4*sz],[sx1,sy1,(-.4-.6)*sz],[sx1,sy0,(-.4-.6)*sz]]));
+ SL.style.opacity=SLs.style.opacity=SLr.style.opacity=sz;
+ /* walls grow up */
+ const w1=E.out(b2),w2=E.out(b3);
+ const WZ=(z)=>z;
+ WF.setAttribute('points',pts([[0,8,0],[12,8,0],[12,8,3*w1],[0,8,3*w1]]));
+ WR.setAttribute('points',pts([[12,0,0],[12,8,0],[12,8,3*w1],[12,0,3*w1]]));
+ WF.style.opacity=WR.style.opacity=cl(w1*2);
+ /* upper volume */
+ BF.setAttribute('points',pts([[5,8,3],[13.2,8,3],[13.2,8,3+3*w2],[5,8,3+3*w2]]));
+ BR.setAttribute('points',pts([[13.2,1,3],[13.2,8,3],[13.2,8,3+3*w2],[13.2,1,3+3*w2]]));
+ BF.style.opacity=BR.style.opacity=cl(w2*2);
+ /* studs grow */
+ STL.forEach((l,i)=>{const [x1,y1,x2,y2]=studs[i];const p=E.out(P(t,b2+i*.02,b2+.6+i*.02));const a=pt(x1,y1,0),c=pt(x1,y1,3*p);l.setAttribute('x1',a[0]);l.setAttribute('y1',a[1]);l.setAttribute('x2',c[0]);l.setAttribute('y2',c[1]);l.style.opacity=p>0?.9:0});
+ /* roof */
+ const rz=E.out(b4);RF.setAttribute('points',pts([[5,1,6+.5*rz],[13.2,1,6+.5*rz],[13.2,8,6+.5*rz],[5,8,6+.5*rz]]));RF.style.opacity=rz;
+ /* title + chips */
+ words(fW,t,9.5,.07,.6,50);
+ fC.querySelectorAll('.chip').forEach((c,i)=>{const p=E.back(P(t,b5+i*.15,b5+.5+i*.15));c.style.opacity=cl(p);c.style.transform=`translateY(${(1-p)*20}px)`});
+ /* 4 the hidden layers */
+ vis('diff',17.2,23.6);
+ words(dW,t,17.5,.06,.55,50);
+ dStk.querySelectorAll('.chip').forEach((c,i)=>{const p=E.quart(P(t,18.6+i*.5,19.1+i*.5));c.style.opacity=p;c.style.transform=`translateX(${(1-p)*-80}px)`});
+ /* 5 the door */
+ vis('door',23,30.4);
+ words(dW2,t,23.4,.07,.6,50);
+ const d1=E.io(P(t,23.8,24.8));
+ $('#dpanel').setAttribute('transform',`translate(1080,540) scale(${1-.55*d1},1) translate(-1080,-540)`);
+ $('#spill').setAttribute('opacity',d1);
+ ['w1','w2','w3'].forEach((id,i)=>{$('#'+id).setAttribute('opacity',.35+.65*E.out(P(t,23.2+i*.18,23.8+i*.18)))});
+ dC.querySelectorAll('.chip').forEach((c,i)=>{const p=E.back(P(t,25.6+i*.25,26+i*.25));c.style.opacity=cl(p);c.style.transform=`translateY(${(1-p)*20}px)`});
+ /* 6 inside */
+ vis('inside',30.2,37.4);
+ const iP=P(t,30.6,31.6);$('#iT').style.opacity=iP;$('#iT').style.transform=`scale(${.96+.04*E.out(iP)})`;words(iW,t,30.6,.1,.6,40);
+ $('#iS').style.opacity=P(t,31.6,32.2)*fadeOut(t,36.5,37.1);
+ $('#lamp1').style.opacity=.6+.4*Math.sin(t*2);$('#lamp2').style.opacity=.6+.4*Math.sin(t*2+1);
+ /* 7 steps */
+ vis('steps',37,44.6);
+ words(sW,t,37.4,.07,.6,50);
+ sC.querySelectorAll('div').forEach((c,i)=>{const p=E.back(P(t,37.8+i*.2,38.5+i*.2));c.style.opacity=cl(p);c.style.transform=`translateY(${(1-E.out(P(t,37.8+i*.2,38.5+i*.2)))*60}px)`});
+ $('#sEnd').style.opacity=P(t,39.8,40.4)*fadeOut(t,44,44.5);
+ /* 8 end */
+ vis('end',44.1,50);
+ $$('.se').forEach((p,i)=>{p.style.strokeDashoffset=p.dataset.len*(1-E.io(P(t,44.4+i*.12,45.2+i*.12)))});
+ words(eW,t,45.5,.06,.6,50);
+ $('#eC').style.opacity=P(t,46.6,47.1);$('#eB').style.opacity=P(t,47.2,47.6);
+ /* camera + fx */
+ let zoom=1;[[4,.02],[9,.02],[17.2,.02],[23.2,.03],[30.6,.02],[37,.02],[44.1,.03]].forEach(([t0,a])=>{const d=t-t0;if(d>=0&&d<.6)zoom+=a*Math.exp(-d*6)});
+ $('#cam').style.transform=`scale(${zoom})`;
+ let fl=0;[[23.6,.35],[44.1,.5]].forEach(([t0,a])=>{const d=t-t0;if(d>=0&&d<.35)fl=Math.max(fl,a*(1-d/.35))});$('#flash').style.opacity=fl;
+ const gi=Math.floor(t*60)%4;if(window.GR)gctx.putImageData(GR[gi],0,0);
+ $('#grain').style.transform=`translate(${(Math.floor(t*60)*37)%100-50}px,${(Math.floor(t*60)*53)%100-50}px)`;
+ const fo=P(t,49.2,50),fi=1-P(t,0,.25);$('#stage').style.filter=(fo>0||fi>0)?`brightness(${(1-fo)*(1-fi)})`:'none';
+};
+function fadeOut(t,a,b){return 1-E.in(P(t,a,b))}
+const gc=$('#grain').getContext('2d');const gctx=gc;window.GR=[];(()=>{const r=rng(3);for(let k=0;k<4;k++){const id=gc.createImageData(640,1024);for(let i=0;i<id.data.length;i+=4){const v=r()*255;id.data[i]=id.data[i+1]=id.data[i+2]=v;id.data[i+3]=255}GR.push(id)}$('#grain').style.width='2120px';$('#grain').style.height='1280px'})();
+window.ready=Promise.all([document.fonts.ready,...['900 100px Archivo','400 20px "Inter Tight"','500 20px "JetBrains Mono"'].map(f=>document.fonts.load(f,'Açãé'))]);
+if(location.hash==='#play'){const t0=performance.now();(function loop(){render(((performance.now()-t0)/1000)%50);requestAnimationFrame(loop)})()}else render(0);
+</script>
+</body></html>
