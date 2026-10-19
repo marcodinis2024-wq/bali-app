@@ -11,24 +11,24 @@ body{font-family:'Inter Tight',sans-serif;color:var(--cream);-webkit-font-smooth
 #cam{position:absolute;inset:0}
 .L{position:absolute;inset:0;opacity:0;visibility:hidden;overflow:hidden}
 .a{position:absolute;will-change:transform,opacity}
-.d{font-family:Archivo,sans-serif;font-weight:900;letter-spacing:-.035em;line-height:.95;white-space:nowrap}
+.d{font-family:Archivo,sans-serif;font-weight:900;letter-spacing:-.035em;line-height:.98;white-space:normal}
 .m{font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
 .w{display:inline-block;will-change:transform,opacity}
 .gold{color:var(--gold)}
-.ill{position:absolute;right:40px;bottom:60px;font:500 14px 'JetBrains Mono';letter-spacing:.2em;color:rgba(242,234,219,.45);text-transform:uppercase}
+.ill{position:absolute;right:40px;bottom:30px;font:500 14px 'JetBrains Mono';letter-spacing:.2em;color:rgba(242,234,219,.45);text-transform:uppercase}
 .chip{display:inline-flex;align-items:center;gap:12px;padding:14px 24px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(242,234,219,.18);font:500 22px 'JetBrains Mono';letter-spacing:.08em;white-space:nowrap}
 .chip i{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
 #grain{position:absolute;inset:-100px;opacity:.07;mix-blend-mode:overlay;pointer-events:none}
 #vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 50%,rgba(0,0,0,.6) 100%)}
 #flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
-
+#bars{position:absolute;left:0;top:0;width:1920px;height:1080px;pointer-events:none}
 </style></head>
 <body>
 <div id="stage"><div id="cam">
 
  <!-- 1 GANCHO: folha e lápis -->
  <div class="L" id="hook" style="background:#efe7d6">
-  <svg class="a" id="sk" width="1920" height="1080" viewBox="0 0 1920 1080" style="left:0;top:0">
+  <svg class="a" id="sk" width="1080" height="607" viewBox="0 0 1920 1080" style="left:0;top:560px">
    <g fill="none" stroke="#2a2620" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
     <path class="sp" pathLength="1" d="M560 780 L560 470 L960 250 L1360 470 L1360 780 Z"/>
     <path class="sp" pathLength="1" d="M520 780 L1400 780"/>
@@ -38,43 +38,43 @@ body{font-family:'Inter Tight',sans-serif;color:var(--cream);-webkit-font-smooth
     <path class="sp" pathLength="1" d="M600 830 C720 812 900 846 1020 826 C1140 806 1300 840 1420 822" stroke-width="3"/>
    </g>
   </svg>
-  <div class="a d" id="hkT" style="left:0;top:880px;width:1920px;text-align:center;font-size:86px;color:#2a2620"></div>
+  <div class="a d" id="hkT" style="left:70px;top:1260px;width:940px;text-align:center;font-size:78px;color:#2a2620"></div>
   <div class="ill">ilustração</div>
  </div>
 
  <!-- 2 O TERRENO: floresta ao amanhecer -->
  <div class="L" id="land" style="background:linear-gradient(180deg,#f0c98a 0%,#c98c5a 28%,#2a3a2c 55%,#0f1a14 100%)">
-  <div class="a" id="sun" style="left:1280px;top:120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(255,236,190,.95) 0%,rgba(255,200,120,.2) 45%,transparent 70%)"></div>
-  <svg class="a" id="trees1" width="2400" height="700" viewBox="0 0 2400 700" style="left:-240px;top:330px"></svg>
-  <svg class="a" id="trees2" width="2400" height="700" viewBox="0 0 2400 700" style="left:-240px;top:420px"></svg>
-  <div class="a" style="left:0;top:700px;width:1920px;height:380px;background:linear-gradient(180deg,#1b2a1f,#0a120d)"></div>
-  <div class="a d" id="lnT1" style="left:120px;top:150px;font-size:96px"></div>
-  <div class="a d" id="lnT2" style="left:120px;top:262px;font-size:96px;color:var(--gold)"></div>
+  <div class="a" id="sun" style="left:300px;top:700px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(255,236,190,.95) 0%,rgba(255,200,120,.2) 45%,transparent 70%)"></div>
+  <svg class="a" id="trees1" width="2400" height="700" viewBox="0 0 2400 700" style="left:-600px;top:1000px"></svg>
+  <svg class="a" id="trees2" width="2400" height="700" viewBox="0 0 2400 700" style="left:-600px;top:1090px"></svg>
+  <div class="a" style="left:0;top:1260px;width:1080px;height:660px;background:linear-gradient(180deg,#1b2a1f,#0a120d)"></div>
+  <div class="a d" id="lnT1" style="left:70px;top:240px;width:940px;font-size:84px"></div>
+  <div class="a d" id="lnT2" style="left:70px;top:430px;width:940px;font-size:84px;color:var(--gold)"></div>
   <div class="ill">ilustração</div>
  </div>
 
  <!-- 3 A FUNDAÇÃO: a casa sobe -->
  <div class="L" id="found" style="background:radial-gradient(90% 70% at 50% 60%,#2a2216 0%,#0b0a08 70%)">
-  <svg class="a" id="iso" width="1920" height="1080" viewBox="0 0 1920 1080" style="left:0;top:0;overflow:visible">
+  <svg class="a" id="iso" width="1080" height="1920" viewBox="0 0 1080 1920" style="left:0;top:0;overflow:visible">
    <g id="gSlab"></g><g id="gWall"></g><g id="gStud"></g><g id="gRoof"></g>
   </svg>
-  <div class="a d" id="fT" style="left:120px;top:110px;font-size:84px"></div>
-  <div class="a" id="fChips" style="left:120px;top:960px;display:flex;gap:14px"></div>
+  <div class="a d" id="fT" style="left:70px;top:200px;width:940px;font-size:72px"></div>
+  <div class="a" id="fChips" style="left:70px;top:1560px;width:940px;display:flex;flex-wrap:wrap;gap:14px"></div>
   <div class="ill">ilustração</div>
  </div>
 
  <!-- 4 O QUE NÃO SE VÊ: camadas -->
  <div class="L" id="diff" style="background:#0b0a08">
-  <div class="a" id="cut" style="left:0;top:0;width:1920px;height:1080px"></div>
-  <div class="a d" id="dT" style="left:120px;top:120px;font-size:84px"></div>
-  <div class="a" id="dStk" style="left:120px;top:430px;display:flex;flex-direction:column;gap:22px"></div>
+  <div class="a" id="cut" style="left:0;top:0;width:1080px;height:1920px"></div>
+  <div class="a d" id="dT" style="left:70px;top:200px;width:940px;font-size:70px"></div>
+  <div class="a" id="dStk" style="left:70px;top:700px;width:940px;display:flex;flex-direction:column;gap:22px"></div>
   <div class="ill">ilustração</div>
  </div>
 
  <!-- 5 A PORTA ESTÁ ABERTA: noite -->
  <div class="L" id="door" style="background:radial-gradient(90% 80% at 62% 62%,#15263a 0%,#0c141d 55%,#050809 100%)">
-  <svg class="a" id="dtrees" width="1920" height="1080" viewBox="0 0 1920 1080" style="left:0;top:0"></svg>
-  <svg class="a" id="dhouse" width="1920" height="1080" viewBox="0 0 1920 1080" style="left:0;top:0;overflow:visible">
+  <svg class="a" id="dtrees" width="1920" height="1080" viewBox="0 0 1920 1080" style="left:-420px;top:560px"></svg>
+  <svg class="a" id="dhouse" width="1920" height="1080" viewBox="0 0 1920 1080" style="left:-420px;top:560px;overflow:visible">
    <defs><linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe2a0" stop-opacity=".9"/><stop offset="1" stop-color="#e3a64a" stop-opacity="0"/></linearGradient>
    <radialGradient id="pool" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="rgba(255,190,100,.5)"/><stop offset="1" stop-color="rgba(255,190,100,0)"/></radialGradient></defs>
    <ellipse cx="1180" cy="760" rx="620" ry="180" fill="url(#pool)"/>
@@ -88,40 +88,40 @@ body{font-family:'Inter Tight',sans-serif;color:var(--cream);-webkit-font-smooth
    <g id="door2"><rect x="1080" y="540" width="120" height="220" fill="#4a2f1c" id="dpanel"/></g>
    <polygon points="1200,540 1290,520 1290,770 1200,760" fill="url(#glow)" id="spill" opacity="0"/>
   </svg>
-  <div class="a d" id="dT2" style="left:120px;top:110px;font-size:96px"></div>
-  <div class="a" id="dChips" style="left:120px;top:300px;display:flex;flex-direction:column;gap:14px;align-items:flex-start"></div>
+  <div class="a d" id="dT2" style="left:70px;top:200px;width:940px;font-size:84px"></div>
+  <div class="a" id="dChips" style="left:70px;top:470px;display:flex;flex-direction:column;gap:14px;align-items:flex-start"></div>
   <div class="ill">ilustração</div>
  </div>
 
  <!-- 6 O PRIMEIRO JANTAR -->
  <div class="L" id="inside" style="background:radial-gradient(70% 70% at 50% 40%,#5a3e22 0%,#2a1d12 55%,#0b0806 100%)">
-  <div class="a" style="left:0;top:0;width:1920px;height:1080px;background:radial-gradient(40% 40% at 20% 20%,rgba(255,200,120,.25),transparent 70%),radial-gradient(40% 40% at 80% 25%,rgba(255,200,120,.2),transparent 70%)"></div>
-  <div class="a" id="tbl" style="left:360px;top:620px;width:1200px;height:200px;border-radius:50%;background:linear-gradient(180deg,#5b3b22,#2e1d10);box-shadow:0 40px 80px rgba(0,0,0,.5)"></div>
-  <div class="a" id="lamp1" style="left:500px;top:120px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,220,150,.9),rgba(255,200,120,0) 70%)"></div>
-  <div class="a" id="lamp2" style="left:1200px;top:120px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,220,150,.9),rgba(255,200,120,0) 70%)"></div>
-  <div class="a d" id="iT" style="left:0;top:330px;width:1920px;text-align:center;font-size:150px"></div>
-  <div class="a" id="iS" style="left:0;top:520px;width:1920px;text-align:center;font:400 44px 'Inter Tight';color:rgba(242,234,219,.85)">Feita para se reunir.</div>
+  <div class="a" style="left:0;top:0;width:1080px;height:1920px;background:radial-gradient(40% 40% at 20% 20%,rgba(255,200,120,.25),transparent 70%),radial-gradient(40% 40% at 80% 25%,rgba(255,200,120,.2),transparent 70%)"></div>
+  <div class="a" id="tbl" style="left:60px;top:1140px;width:960px;height:240px;border-radius:50%;background:linear-gradient(180deg,#5b3b22,#2e1d10);box-shadow:0 40px 80px rgba(0,0,0,.5)"></div>
+  <div class="a" id="lamp1" style="left:160px;top:300px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,220,150,.9),rgba(255,200,120,0) 70%)"></div>
+  <div class="a" id="lamp2" style="left:700px;top:300px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,220,150,.9),rgba(255,200,120,0) 70%)"></div>
+  <div class="a d" id="iT" style="left:0;top:860px;width:1080px;text-align:center;font-size:124px"></div>
+  <div class="a" id="iS" style="left:0;top:1020px;width:1080px;text-align:center;font:400 40px 'Inter Tight';color:rgba(242,234,219,.85)">Feita para se reunir.</div>
   <div class="ill">ilustração</div>
  </div>
 
  <!-- 7 COMO SE COMEÇA -->
  <div class="L" id="steps" style="background:#0b0a08">
-  <div class="a d" id="sT" style="left:120px;top:110px;font-size:76px"></div>
-  <div class="a" id="sCards" style="left:120px;top:370px;display:flex;gap:40px"></div>
-  <div class="a" id="sEnd" style="left:120px;top:820px;font:500 30px 'Inter Tight';color:rgba(242,234,219,.85)">Fale connosco. Sem compromisso.</div>
+  <div class="a d" id="sT" style="left:70px;top:200px;width:940px;font-size:66px"></div>
+  <div class="a" id="sCards" style="left:70px;top:620px;width:940px;display:flex;flex-direction:column;gap:26px"></div>
+  <div class="a" id="sEnd" style="left:70px;top:1560px;width:940px;font:500 30px 'Inter Tight';color:rgba(242,234,219,.85)">Fale connosco. Sem compromisso.</div>
  </div>
 
  <!-- 8 FINAL -->
  <div class="L" id="end" style="background:radial-gradient(60% 70% at 50% 45%,#2a2216,#0b0a08 70%)">
-  <svg class="a" id="emb" width="260" height="260" viewBox="0 0 200 200" style="left:830px;top:200px">
+  <svg class="a" id="emb" width="260" height="260" viewBox="0 0 200 200" style="left:410px;top:560px">
    <circle class="se" cx="100" cy="100" r="92" fill="none" stroke="#E3B65A" stroke-width="3"/>
    <path class="se" d="M44 108 L100 58 L156 108" fill="none" stroke="#E3B65A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
    <path class="se" d="M60 96 V146 H140 V96" fill="none" stroke="#E3B65A" stroke-width="4" stroke-linejoin="round"/>
    <path class="se" d="M80 146 V112 M100 146 V100 M120 146 V112" fill="none" stroke="#E3B65A" stroke-width="3" stroke-linecap="round"/>
   </svg>
-  <div class="a d" id="eT" style="left:0;top:500px;width:1920px;text-align:center;font-size:92px"></div>
-  <div class="a" id="eC" style="left:0;top:680px;width:1920px;text-align:center;font:500 30px 'JetBrains Mono';letter-spacing:.08em;color:var(--cream)">T 925 392 248 · T 924 316 442 · geraltimberline@gmail.com</div>
-  <div class="a m" id="eB" style="left:0;top:790px;width:1920px;text-align:center;font-size:24px;color:var(--gold)">Em breve no ar · Timberline</div>
+  <div class="a d" id="eT" style="left:0;top:880px;width:1080px;text-align:center;font-size:84px"></div>
+  <div class="a" id="eC" style="left:60px;top:1110px;width:960px;text-align:center;font:500 26px/1.6 'JetBrains Mono';letter-spacing:.06em;color:var(--cream)">T 925 392 248 · T 924 316 442 · geraltimberline@gmail.com</div>
+  <div class="a m" id="eB" style="left:0;top:1260px;width:1080px;text-align:center;font-size:24px;color:var(--gold)">Em breve no ar · Timberline</div>
  </div>
 
 </div>
@@ -160,7 +160,7 @@ function dark(svg,seed,n){const r=rng(seed);let s='';for(let i=0;i<n;i++){const 
 dark($('#dtrees'),3,46);
 
 /* iso house geometry (found scene) */
-const SC=46,CO=Math.cos(Math.PI/6),OX=960,OY=470;
+const SC=36,CO=Math.cos(Math.PI/6),OX=540,OY=1000;
 const pt=(x,y,z)=>[OX+(x-y)*CO*SC,OY+(x+y)*.5*SC-z*SC];
 const pts=a=>a.map(p=>pt(...p).map(v=>v.toFixed(1)).join(',')).join(' ');
 const NS='http://www.w3.org/2000/svg';const mk=(tag,attrs,par)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);par.appendChild(e);return e};
@@ -176,13 +176,13 @@ const fC=$('#fChips');chips.forEach(c=>{const d=document.createElement('div');d.
 /* differentials stack */
 const cut=$('#cut');
 const LAY=[['Fibra de madeira','pelo exterior'],['Lã de rocha','incombustível'],['OSB 3/4','contraventamento'],['Lamelado colado','Classe IV']];
-const dStk=$('#dStk');LAY.forEach(([a,b])=>{const d=document.createElement('div');d.className='chip';d.style.cssText+=';padding:22px 34px;font-size:30px;width:760px;justify-content:space-between';d.innerHTML=`<span style="font:700 34px Archivo;letter-spacing:-.01em;text-transform:none">${a}</span><span style="color:var(--muted)">${b}</span>`;d.style.opacity=0;dStk.appendChild(d)});
+const dStk=$('#dStk');LAY.forEach(([a,b])=>{const d=document.createElement('div');d.className='chip';d.style.cssText+=';padding:22px 34px;font-size:28px;width:940px;justify-content:space-between';d.innerHTML=`<span style="font:700 34px Archivo;letter-spacing:-.01em;text-transform:none">${a}</span><span style="color:var(--muted)">${b}</span>`;d.style.opacity=0;dStk.appendChild(d)});
 
 /* doorway chips */
 const dC=$('#dChips');['À medida','Chave na mão'].forEach(c=>{const d=document.createElement('div');d.className='chip';d.innerHTML=`<i></i>${c}`;d.style.opacity=0;dC.appendChild(d)});
 
 /* steps cards */
-const sC=$('#sCards');[['01','Desenho'],['02','Projeto à medida'],['03','Chave na mão']].forEach(([n,t])=>{const d=document.createElement('div');d.style.cssText='width:520px;height:380px;border-radius:26px;padding:34px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(242,234,219,.16);position:relative;opacity:0';d.innerHTML=`<div style="font:600 96px Archivo;color:rgba(227,182,90,.22);position:absolute;right:30px;top:12px">${n}</div><div style="position:absolute;left:34px;bottom:40px;font:800 56px/1 Archivo;letter-spacing:-.02em">${t}</div>`;sC.appendChild(d)});
+const sC=$('#sCards');[['01','Desenho'],['02','Projeto à medida'],['03','Chave na mão']].forEach(([n,t])=>{const d=document.createElement('div');d.style.cssText='width:940px;height:260px;border-radius:26px;padding:30px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(242,234,219,.16);position:relative;opacity:0';d.innerHTML=`<div style="font:600 84px Archivo;color:rgba(227,182,90,.22);position:absolute;right:30px;top:10px">${n}</div><div style="position:absolute;left:34px;bottom:40px;font:800 50px/1 Archivo;letter-spacing:-.02em">${t}</div>`;sC.appendChild(d)});
 
 /* final emblem strokes */
 $$('.se').forEach(p=>{const L=p.getTotalLength?p.getTotalLength():600;p.style.strokeDasharray=L;p.style.strokeDashoffset=L;p.dataset.len=L});
