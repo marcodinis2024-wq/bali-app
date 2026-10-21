@@ -5,7 +5,7 @@ Sem fotografias e sem vetores: só papel rasgado (formas recortadas, bordas de f
 meio-tom gerado em código) e tipografia. Sem IA gerativa. Movimento "a dois tempos" (12 desenhos/s).
 Música e efeitos sonoros: `audio/score.wav` (gerado por `audio_collage.py`), 120 BPM, grelha de 0,5 s.
 
-Texto em português, como o site (a skill usa inglês por defeito; isto é uma decisão a confirmar).
+Texto em português, como o site (confirmado; a skill usa inglês por defeito).
 
 | tempo | música | o que se vê | texto no ecrã (verbatim) | som |
 |---|---|---|---|---|

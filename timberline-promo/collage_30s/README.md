@@ -17,6 +17,6 @@ que precisa de macOS (Swift, AVFoundation, `afconvert`).
 ## Decisões já tomadas
 - Sem fotografias e sem vetores: só papel rasgado, texturas, meio-tom e tipografia.
   Na skill, isto quer dizer não gerar recortes fotográficos (passo 4) e desenhar tudo em código.
-- Texto em português, como o site (a skill usa inglês por defeito).
+- Texto em português, como o site (confirmado; a skill usa inglês por defeito, por isso indica-o no pedido).
 - Música sintetizada aqui; o `score.html` da skill fica de lado.
 - Sem flashes de ecrã inteiro.
